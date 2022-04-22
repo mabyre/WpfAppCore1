@@ -1,5 +1,5 @@
 ﻿# WPF .NET Core ToolKit
-Tookit: means you can rapidly add a new test  
+Toolkit: means you can rapidly add a new test  
 add a UserControl connect it by a button on main window  
 
 ## 22/04/2022
