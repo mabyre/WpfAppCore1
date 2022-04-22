@@ -1,6 +1,6 @@
 ﻿# WPF .NET Core ToolKit
 Tookit: means you can rapidly add a new test  
-add a UserControl connect ti by a button
+add a UserControl connect it by a button on main window  
 
 ## 22/04/2022
 UserControl1 : Logger message on file  
