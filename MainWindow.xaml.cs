@@ -24,9 +24,11 @@ namespace WpfAppCore1
         {
             InitializeComponent();
 
-            // Simulate a clic on button to load UserControl
+            // Simulate a clic on button to load the UserControl
+            // you want at the beginning
+            //
             Button b = new Button();
-            b.Name = "buttonTest2";
+            b.Name = "buttonTest1";
             button_Click( b, null );
         }
 

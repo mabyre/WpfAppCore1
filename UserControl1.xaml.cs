@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,7 +19,8 @@ namespace WpfAppCore1
     /// </summary>
     public partial class UserControl1 : UserControl
     {
-        FileLogger file = new FileLogger( "log.txt" );
+        static string fileName = "log.txt";
+        FileLogger file = new FileLogger( fileName );
 
         public UserControl1()
         {
@@ -28,9 +30,15 @@ namespace WpfAppCore1
             Logger.LogLevel = Severity.Verbose; // by default set to Warning
         }
 
-        private void Button1_Click( object sender, RoutedEventArgs e )
+        private void ButtonTrace_Click( object sender, RoutedEventArgs e )
         {
-            Logger.LogMessage( Severity.Verbose, "UserControl1", "Click on button1" );
+            Logger.LogMessage( Severity.Verbose, "UserControl1", "Click on Trace" );
+            textBoxLog.Text += "Message have been logged!" + Environment.NewLine;
+        }
+
+        private void ButtonDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            textBoxLog.Text = File.ReadAllText(fileName);
         }
     }
 }
