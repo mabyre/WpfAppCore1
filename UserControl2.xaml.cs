@@ -46,7 +46,12 @@ namespace WpfAppCore1
 
         private void Button_Click( object sender, RoutedEventArgs e )
         {
-            this.SetText = "Coucou world!";
+            this.SetText = "Say Hello to the world using DependencyProperty!";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.SetText = "You clicked on Pass mouse over button";
         }
     }
 }

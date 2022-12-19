@@ -33,7 +33,7 @@ namespace WpfAppCore1
         private void ButtonTrace_Click( object sender, RoutedEventArgs e )
         {
             Logger.LogMessage( Severity.Verbose, "UserControl1", "Click on Trace" );
-            textBoxLog.Text += "Message have been logged!" + Environment.NewLine;
+            textBoxLog.Text += "Trace have been logged!" + Environment.NewLine;
         }
 
         private void ButtonDisplay_Click(object sender, RoutedEventArgs e)
