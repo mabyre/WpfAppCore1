@@ -15,6 +15,6 @@ Log message into severals, file, console, trace, windows
 Manage level of severity
 It's an exemple of using delegate function
 
-- path to the log file
-* WpfAppCore1\bin\Debug\netcoreapp3.1\log.txt  
+- path to the log file :
+	- WpfAppCore1\bin\Debug\netcoreapp3.1\log.txt
 
