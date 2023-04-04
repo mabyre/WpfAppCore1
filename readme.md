@@ -1,6 +1,4 @@
-﻿[Syntaxe Markdown](https://www.markdownguide.org/basic-syntax/)
-
-# WPF .NET Core ToolKit
+﻿# WPF .NET Core ToolKit
 This Toolkit let you rapidly add a new test by adding a new UserControl and connect it to a new button on main window.
 
 ## UserControl1
