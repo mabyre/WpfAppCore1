@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace WpfAppCore1
+namespace Tools.Logger
 {
     public enum Severity
     {
