@@ -32,3 +32,9 @@ Configuration is done in control after InitializeComponent :
 - path to the log file :
 	- WpfAppCore1\bin\Debug\netcoreapp3.1\log.txt
 
+The use of this component have been demonstrated in Blazor project: [MyBlazorServerApp](https://github.com/mabyre/MyBlazorServerApp)
+
+### ToDo
+- complete logfile name with the date of the day
+- make user to specify log file path
+
