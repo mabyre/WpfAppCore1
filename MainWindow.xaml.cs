@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace WpfAppCore1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly ILogger<MainWindow> logger;
+        private readonly ILoggerFactory _loggerFactory;
+
+        public MainWindow(ILoggerFactory loggerFactory)
         {
             InitializeComponent();
+
+            logger = loggerFactory.CreateLogger<MainWindow>();
+            _loggerFactory = loggerFactory;
 
             // Simulate a clic on button to load the UserControl
             // you want at the beginning
@@ -51,6 +58,14 @@ namespace WpfAppCore1
                 uccWidth = Column0.Width.Value + ucc.Width;
                 uccHeight = ucc.Height;
                 ucc.SetText = "Hello World!"; // DependencyProperty
+                ContentControlArea.Content = ucc;
+            }
+
+            if ((sender as Button).Name == "buttonLog")
+            {
+                UserControlLog ucc = new UserControlLog(_loggerFactory);
+                uccWidth = Column0.Width.Value + ucc.Width;
+                uccHeight = ucc.Height;
                 ContentControlArea.Content = ucc;
             }
 

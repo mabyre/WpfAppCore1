@@ -13,5 +13,22 @@ namespace WpfAppCore1
     /// </summary>
     public partial class App : Application
     {
+        private readonly MainWindow mainWindow;
+
+        // Constructeur needed for partial class but never called
+        public App()
+        {
+        }
+
+        public App(MainWindow mainWindow)
+        {
+            this.mainWindow = mainWindow;
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            mainWindow.Show();
+            base.OnStartup(e);
+        }
     }
 }
