@@ -21,14 +21,14 @@ namespace WpfAppCore1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ILogger<MainWindow> logger;
+        private readonly ILogger<MainWindow> _logger;
         private readonly ILoggerFactory _loggerFactory;
 
         public MainWindow(ILoggerFactory loggerFactory)
         {
             InitializeComponent();
 
-            logger = loggerFactory.CreateLogger<MainWindow>();
+            _logger = loggerFactory.CreateLogger<MainWindow>();
             _loggerFactory = loggerFactory;
 
             // Simulate a clic on button to load the UserControl
