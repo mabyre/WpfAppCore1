@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,14 @@ namespace WpfAppCore1
             if ((sender as Button).Name == "buttonLog")
             {
                 UserControlLog ucc = new UserControlLog(_loggerFactory);
+                uccWidth = Column0.Width.Value + ucc.Width;
+                uccHeight = ucc.Height;
+                ContentControlArea.Content = ucc;
+            }
+
+            if ((sender as Button).Name == "buttonAppSettings")
+            {
+                UseAppSettings ucc = new UseAppSettings();
                 uccWidth = Column0.Width.Value + ucc.Width;
                 uccHeight = ucc.Height;
                 ContentControlArea.Content = ucc;

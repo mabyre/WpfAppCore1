@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,8 @@ namespace WpfAppCore1
     /// </summary>
     public partial class App : Application
     {
+        public static IConfiguration Configuration { get; private set; }
+
         private readonly MainWindow mainWindow;
 
         // Constructeur needed for partial class but never called
@@ -27,6 +31,15 @@ namespace WpfAppCore1
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            // AppSettings
+            //
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            Configuration = builder.Build();
+            // -----------
+
             mainWindow.Show();
             base.OnStartup(e);
         }

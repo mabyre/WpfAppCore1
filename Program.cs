@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 
 namespace WpfAppCore1
@@ -12,8 +13,7 @@ namespace WpfAppCore1
         public static void Main()
         {
             var host = Host.CreateDefaultBuilder()
-                .ConfigureServices(services =>
-                {
+                .ConfigureServices(services => {
                     services.AddSingleton<App>();
                     services.AddSingleton<MainWindow>();
                 })

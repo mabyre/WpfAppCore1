@@ -50,7 +50,6 @@ If I want to enhance my personnal logger I'll have some work.
 I saw something like adjust log level in appsettings could make you see internal core library messages and this is cool.
 
 ### Reference
-
 - [StackOverflow - How to log to a file without using third party logger in .Net Core?](https://stackoverflow.com/questions/40073743/how-to-log-to-a-file-without-using-third-party-logger-in-net-core)
 - [closed issue](https://github.com/aspnet/Logging/issues/441)
 - [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging)
@@ -64,6 +63,17 @@ This is the aim of UserControlLog plus some little things like add ***Program.cs
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.2.23128.3" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0-preview.2.23128.3" />
 ```
+
+## Add an appsettings.json file
+I'm very surprise that default template WPF application are NOT with an an appsettings.json file ?!
+While WPF application create by TemplateSutio had one.
+
+### Reference
+[LearnMicrosoft - Configuration in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/)
+[StackOverflow - C# ConfigurationManager in .NET Core](https://stackoverflow.com/questions/71104843/c-sharp-configurationmanager-in-net-core)
+
+
+
 
 
 
