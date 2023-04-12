@@ -22,6 +22,10 @@
     <ApplicationDefinition Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+  </ItemGroup>	
+
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>

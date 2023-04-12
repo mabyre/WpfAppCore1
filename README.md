@@ -1,18 +1,22 @@
 ﻿# WPF .NET Core ToolKit
-This Toolkit let you rapidly add a new test by adding a new UserControl and connect it to a new button on main window.
+This Toolkit let you rapidly add a new small test by adding a new UserControl and connect it to a new button on main window.
+
+Like this:
+
+<img style="margin: 10px" src="Images/2023-04-12_11h06_53.png" alt="WPF .NET Core Toolkit" />
 
 ## UserControl1
 - Use Logger Tool
 
 ## UserControl2 
-- Demonstrate the use of Dependency Property
+- Demonstrate the use of ***Dependency Property***
 - Show Style.Triggers
 
 ## UserControlLog
-- .NET Core 6.0 way of produce Logs using .NET Core standard ILogger and ILoggerFactory
+- .NET Core 6.0 way of produce Logs using .NET Core standard ***ILogger*** and ***ILoggerFactory***
 
 ## UseAppSettings
-- Read application configuration in appsettings.json file
+- Read application configuration in ***appsettings.json*** file
 
 ## Tools/Logger
 Loggin is a more tough subject than we can think, especially since log4net has become a gas factory.
