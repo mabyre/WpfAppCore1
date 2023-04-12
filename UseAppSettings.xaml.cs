@@ -29,6 +29,9 @@ namespace WpfAppCore1
             InitializeComponent();
 
             textBoxDisplay.Text = config;
+
+            textBoxDisplay.Text += Environment.NewLine;
+            textBoxDisplay.Text += App.Configuration.GetSection("Logging:LogLevel:Default").Value;
         }
     }
 }

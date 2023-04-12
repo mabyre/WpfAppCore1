@@ -11,6 +11,9 @@ This Toolkit let you rapidly add a new test by adding a new UserControl and conn
 ## UserControlLog
 - .NET Core 6.0 way of produce Logs using .NET Core standard ILogger and ILoggerFactory
 
+## UseAppSettings
+- Read application configuration in appsettings.json file
+
 ## Tools/Logger
 Loggin is a more tough subject than we can think, especially since log4net has become a gas factory.
 
@@ -44,7 +47,7 @@ The use of this component have been demonstrated in a Blazor project: [MyBlazorS
 - complete logfile name with the date of the day
 - make user to specify log file path
 
-## Return to sources of Logs
+## Back to basics of Logs
 While I'm working on new apps, log is style a tricky subject. 
 If I want to enhance my personnal logger I'll have some work. 
 I saw something like adjust log level in appsettings could make you see internal core library messages and this is cool.
@@ -68,11 +71,13 @@ This is the aim of UserControlLog plus some little things like add ***Program.cs
 I'm very surprise that default template WPF application are NOT with an an appsettings.json file ?!
 While WPF application create by TemplateSutio had one.
 
+So add by hand an appsettings.json
+
 ### Reference
-[LearnMicrosoft - Configuration in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/)
-[StackOverflow - C# ConfigurationManager in .NET Core](https://stackoverflow.com/questions/71104843/c-sharp-configurationmanager-in-net-core)
+- [LearnMicrosoft - Configuration in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/)
+- [StackOverflow - C# ConfigurationManager in .NET Core](https://stackoverflow.com/questions/71104843/c-sharp-configurationmanager-in-net-core)
 
-
+The aim of adding an ***appsettings.json*** is to configure Log level.
 
 
 
