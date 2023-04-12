@@ -83,6 +83,14 @@ So add by hand an appsettings.json
 
 The aim of adding an ***appsettings.json*** is to configure Log level.
 
+## Create Style
+
+> :warning: Trying to create Style in <Application.Resources> create an exception in MainWindow InitializeComponent();
+>
+> Style must be created in ***<Window.Resources>***
+
+[Learn Microsoft - How to create a style for a control (WPF .NET)](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-create-apply-style)
+
 
 
 

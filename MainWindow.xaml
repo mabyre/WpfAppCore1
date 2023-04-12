@@ -7,6 +7,22 @@
         xmlns:local="clr-namespace:WpfAppCore1"
         mc:Ignorable="d"
         Title="My WPF App with .NET Core" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="GrayBlueGardientBrush" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="DarkCyan" Offset="0"/>
+                <GradientStop Color="#CCCCFF" Offset="0.5"/>
+                <GradientStop Color="DarkCyan" Offset="1"/>
+            </LinearGradientBrush>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="{StaticResource GrayBlueGardientBrush}"/>
+            </Style>
+            <Style x:Key="StyleTitle" TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="FontWeight"  Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid HorizontalAlignment="Left" Width="800">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="111.333" x:Name="Column0" />
@@ -26,6 +42,13 @@
         <Button x:Name="buttonTest2" Content="Test2" Margin="10,35,10,0" VerticalAlignment="Top" Click="button_Click"/>
         <Button x:Name="buttonLog" Content="Log" Margin="10,60,10,0" VerticalAlignment="Top" Click="button_Click"/>
         <Button x:Name="buttonAppSettings" Content="App Settings" Margin="10,86,10,0" VerticalAlignment="Top" Click="button_Click"/>
-        <ContentControl x:Name="ContentControlArea" Grid.Column="2"/>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textBlockTitle" Style="{StaticResource StyleTitle}" Grid.Row="0" Text="It's user control name" />
+            <ContentControl x:Name="ContentControlArea" Grid.Row="1"/>
+        </Grid>
     </Grid>
 </Window>

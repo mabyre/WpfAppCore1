@@ -51,6 +51,8 @@ namespace WpfAppCore1
                 uccWidth = Column0.Width.Value + ucc.Width;
                 uccHeight = ucc.Height;
                 ContentControlArea.Content = ucc;
+
+                textBlockTitle.Text = "Use Logger Tool";
             }
 
             if ( (sender as Button).Name == "buttonTest2" )
@@ -60,6 +62,8 @@ namespace WpfAppCore1
                 uccHeight = ucc.Height;
                 ucc.SetText = "Hello World!"; // DependencyProperty
                 ContentControlArea.Content = ucc;
+
+                textBlockTitle.Text = "Demonstrate the use of Dependency Property";
             }
 
             if ((sender as Button).Name == "buttonLog")
@@ -68,6 +72,8 @@ namespace WpfAppCore1
                 uccWidth = Column0.Width.Value + ucc.Width;
                 uccHeight = ucc.Height;
                 ContentControlArea.Content = ucc;
+
+                textBlockTitle.Text = "Logs using .NET Core standard";
             }
 
             if ((sender as Button).Name == "buttonAppSettings")
@@ -76,6 +82,8 @@ namespace WpfAppCore1
                 uccWidth = Column0.Width.Value + ucc.Width;
                 uccHeight = ucc.Height;
                 ContentControlArea.Content = ucc;
+
+                textBlockTitle.Text = "Read appsettings.json file";
             }
 
             MyMainWindow.Width = uccWidth + 15; // margin
