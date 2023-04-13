@@ -62,7 +62,8 @@ I saw something like adjust log level in appsettings could make you see internal
 - [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging)
 - [Logging and global error handling in .NET 7 WPF applications](https://blog.elmah.io/logging-and-global-error-handling-in-net-7-wpf-applications/)
 - [Logging in .NET Core and ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/)
-    - This is one for .NET Core particulary [Non-host console app](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1#non-host-console-app) har to find
+    - This is one for .NET Core particulary [Non-host console app](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1#non-host-console-app) hard to find 
+      but this code is not usefull teel appsettins.json file is present.
 
 While I'm working on loggin features I found intresting to make logs in the ***.NET Core standard way***.
 
@@ -84,6 +85,22 @@ So add by hand an appsettings.json
 - [StackOverflow - C# ConfigurationManager in .NET Core](https://stackoverflow.com/questions/71104843/c-sharp-configurationmanager-in-net-core)
 
 The aim of adding an ***appsettings.json*** is to configure Log level.
+
+Once the appsettings.jso file is here the following config will make logs at Trace level :
+
+```xaml
+    "Debug": {
+        "LogLevel": {
+        "Default": "Trace",
+        "Microsoft": "Trace",
+        "Microsoft.Hosting": "Trace"
+        }
+    }
+```
+
+> :warning: The appsettings.json file to change is the one in directory:
+>
+> ***WpfAppCore1\bin\Debug\net6.0-windows***
 
 ## Create Style
 
