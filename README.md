@@ -61,6 +61,8 @@ I saw something like adjust log level in appsettings could make you see internal
 - [closed issue](https://github.com/aspnet/Logging/issues/441)
 - [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging)
 - [Logging and global error handling in .NET 7 WPF applications](https://blog.elmah.io/logging-and-global-error-handling-in-net-7-wpf-applications/)
+- [Logging in .NET Core and ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/)
+    - This is one for .NET Core particulary [Non-host console app](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1#non-host-console-app) har to find
 
 While I'm working on loggin features I found intresting to make logs in the ***.NET Core standard way***.
 
