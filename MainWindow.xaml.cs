@@ -32,11 +32,12 @@ namespace WpfAppCore1
             _logger = loggerFactory.CreateLogger<MainWindow>();
             _loggerFactory = loggerFactory;
 
+
             // Simulate a clic on button to load the UserControl
             // you want at the beginning
             //
             Button b = new Button();
-            b.Name = "buttonTest1";
+            b.Name = "buttonLog";
             button_Click( b, null );
         }
 
