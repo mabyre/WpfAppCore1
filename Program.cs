@@ -10,7 +10,7 @@ namespace WpfAppCore1
     public class Program
     {
         [STAThread]
-        public static void Main()
+        public static void Main(string[] args)
         {
             var host = Host.CreateDefaultBuilder()
                 .ConfigureServices(services => {
