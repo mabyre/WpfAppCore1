@@ -5,6 +5,12 @@ Like this:
 
 <img style="margin: 10px" src="Images/2023-04-12_11h06_53.png" alt="WPF .NET Core Toolkit" />
 
+## Summary
+- [Personal logger](#Personal-logger)
+- [Back to basics of Logs](#back-to-basics-of-logs)
+- [Add an appsettings.json file](#add-an-appsettingsjson-file)
+- [Create Style](#Create-Style)
+
 ## UserControl1
 - Use Logger Tool
 
@@ -18,12 +24,12 @@ Like this:
 ## UseAppSettings
 - Read application configuration in ***appsettings.json*** file
 
-## Tools/Logger
-Loggin is a more tough subject than we can think, especially since log4net has become a gas factory.
-
 ### Personal logger
 It could be intresting to have it's own logger system at a time where everyone says to do not reinvent the wheel, while doing it.
 Sometimes I could found ***log4net*** diffcult to install and configure.
+
+## Tools/Logger
+Loggin is a more tough subject than we can think, especially since log4net has become a gas factory.
 
 Log message into severals, file, console, trace, windows easily add your own method.
 Manage level of severity.
@@ -49,6 +55,7 @@ The use of this component have been demonstrated in a Blazor project: [MyBlazorS
 
 #### ToDo
 - complete logfile name with the date of the day
+- format the login massage
 - make user to specify log file path
 
 ## Back to basics of Logs
@@ -103,6 +110,7 @@ Once the appsettings.jso file is here the following config will make logs at Tra
 > ***WpfAppCore1\bin\Debug\net6.0-windows***
 
 ## Create Style
+It's needed to add a Style for ToolBar Text
 
 > :warning: Trying to create Style in <Application.Resources> create an exception in MainWindow InitializeComponent();
 >
@@ -110,6 +118,9 @@ Once the appsettings.jso file is here the following config will make logs at Tra
 
 [Learn Microsoft - How to create a style for a control (WPF .NET)](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-create-apply-style)
 
+<img style="margin: 10px" src="Images/2023-04-14_12h00_38.png" alt="WPF .NET Core Toolkit Styled" />
+
+[:arrow_up_small: Top of page](#wpf-net-core-toolkit)
 
 
 
