@@ -31,7 +31,7 @@ namespace WpfAppCore1
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            // AppSettings
+            // AppSettings configuration file
             //
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
