@@ -87,8 +87,12 @@ namespace WpfAppCore1
                 textBlockTitle.Text = "Read appsettings.json file";
             }
 
-            MyMainWindow.Width = uccWidth + 15; // margin
-            MyMainWindow.Height = uccHeight + 35; // 30 it's the toolbar
+            MyMainWindow.Width = uccWidth + 40; // margin
+
+            // 30 it's the window's toolbar
+            // 40 it's title bar
+            // 10 margin
+            MyMainWindow.Height = uccHeight + 30 + 40 + 10; 
         }
     }
 }
