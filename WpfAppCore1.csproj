@@ -26,6 +26,10 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>	
+
+  <ItemGroup>
+    <ProjectReference Include="..\console-custom-logging\console-custom-logging.csproj" />
   </ItemGroup>
 
 </Project>
