@@ -9,6 +9,7 @@ Like this:
 - [Personal logger](#Personal-logger)
 - [Back to basics of Logs](#back-to-basics-of-logs)
 - [Add an appsettings.json file](#add-an-appsettingsjson-file)
+- [File Logger Provider](#file-logger-provider)
 - [Create Style](#Create-Style)
 
 ## UserControl1
