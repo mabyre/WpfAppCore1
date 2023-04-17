@@ -76,6 +76,15 @@ namespace WpfAppCore1
             //logger.LogInformation("Test {@value1}", order); // object Result: Test {"OrderId":2, "Status":"Processing"}
             logger.LogInformation("Test {value1}", new { OrderId = 2, Status = "Processing" });  // anonymous object. Result: Test { OrderId = 2, Status = Processing }
             logger.LogInformation("Test {@value1}", new { OrderId = 2, Status = "Processing" }); // anonymous object. Result: Test {"OrderId":2, "Status":"Processing"}
+
+            //
+            // https://learn.microsoft.com/en-us/dotnet/core/extensions/custom-logging-provider
+            //
+            logger.LogDebug(1, "Does this line get hit?");    // Not logged
+            logger.LogInformation(3, "Nothing to see here."); // Logs in ConsoleColor.DarkGreen
+            logger.LogWarning(5, "Warning... that was odd."); // Logs in ConsoleColor.DarkCyan
+            logger.LogError(7, "Oops, there was an error.");  // Logs in ConsoleColor.DarkRed
+            logger.LogTrace(5, "== 120.");                    // Not logged
         }
 
         private void ButtonDisplay_Click(object sender, RoutedEventArgs e)
