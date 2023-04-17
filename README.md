@@ -122,5 +122,10 @@ It's needed to add a Style for ToolBar Text
 
 [:arrow_up_small: Top of page](#wpf-net-core-toolkit)
 
+## Other Reference Pages 
+
+[HTTP Login in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-logging/)
+
+[How to Write a Custom Logging Provider in ASP.NET Core](https://www.codeproject.com/Articles/1556475/How-to-Write-a-Custom-Logging-Provider-in-ASP-NET)
 
 
