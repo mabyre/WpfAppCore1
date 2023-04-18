@@ -53,7 +53,7 @@ namespace WpfAppCore1
                 uccHeight = ucc.Height;
                 ContentControlArea.Content = ucc;
 
-                textBlockTitle.Text = "Use Logger Tool";
+                textBlockTitle.Text = "Test1: Use Logger Tool";
             }
 
             if ( (sender as Button).Name == "buttonTest2" )

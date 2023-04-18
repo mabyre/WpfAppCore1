@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfAppCore1"
              mc:Ignorable="d" 
-             d:DesignWidth="660" d:DesignHeight="450"
-             Width="660" Height="450">
+             d:DesignWidth="660" d:DesignHeight="450">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
