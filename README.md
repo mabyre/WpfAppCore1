@@ -10,7 +10,7 @@ Like this:
 - [Back to basics of Logs](#back-to-basics-of-logs)
 - [Add an appsettings.json file](#add-an-appsettingsjson-file)
 - [File Logger Provider](#file-logger-provider)
-- [Create Style](#Create-Style)
+- [Create Style for toolbar](#create-style-for-toolbar)
 
 ## UserControl1
 - Use Logger Tool
@@ -120,7 +120,14 @@ This project now integrate a FileLogger that cames from tbebekis with just a sma
 ### Reference
 - [GitHub - tbebekis - AspNetCore-CustomLoggingProvider](https://github.com/tbebekis/AspNetCore-CustomLoggingProvider)
 
-## Create Style
+Add a TextBloc to display the log file:
+
+<img style="margin: 10px" src="Images/2023-04-18_12h22_07.png" alt="WPF .NET Core Toolkit - File Logger Provider" />
+
+That's the result the final result snif ;) that's what I wanted to do a console to display logs that are in a log file. 
+This can be very useful for debugging in dantesque conditions.
+
+## Create Style for Toolbar
 It's needed to add a Style for ToolBar Text
 
 > :warning: Trying to create Style in <Application.Resources> create an exception in MainWindow InitializeComponent();

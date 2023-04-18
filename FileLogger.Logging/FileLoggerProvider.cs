@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Primitives;
 
 namespace FileLogger.Logging
 {
@@ -23,13 +24,13 @@ namespace FileLogger.Logging
     [Microsoft.Extensions.Logging.ProviderAlias("File")]
     public class FileLoggerProvider : LoggerProvider
     {
-        public static string FilePath { get; set; }
+        public static string PathFileName { get; set; }
 
         private bool Terminated;
         private int Counter = 0;
         private Dictionary<string, int> Lengths = new Dictionary<string, int>();
        
-        ConcurrentQueue<LogEntry> InfoQueue = new ConcurrentQueue<LogEntry>();
+        private ConcurrentQueue<LogEntry> InfoQueue = new ConcurrentQueue<LogEntry>();
 
         /// <summary>
         /// Applies the log file retains policy according to options
@@ -66,14 +67,14 @@ namespace FileLogger.Logging
             Counter++;
             if (Counter % 100 == 0)
             {
-                FileInfo FI = new FileInfo(FilePath);
+                FileInfo FI = new FileInfo(PathFileName);
                 if (FI.Length > (1024 * 1024 * Settings.MaxFileSizeInMB))
                 {                    
-                    BeginFile();
+                    BeginFile(); // begin a new file
                 }
             }
 
-            File.AppendAllText(FilePath, Text);
+            File.AppendAllText(PathFileName, Text);
         }
         /// <summary>
         /// Pads a string with spaces to a max length. Truncates the string to max length if the string exceeds the limit.
@@ -98,8 +99,9 @@ namespace FileLogger.Logging
             Lengths["Host"] = 16;
             Lengths["User"] = 16;
             Lengths["Level"] = 14;
-            Lengths["EventId"] = 32;
-            Lengths["Category"] = 92;
+            Lengths["EventId"] = 8;
+            Lengths["Category"] = 32;
+            Lengths["Text"] = 64;
             Lengths["Scope"] = 64;
         }
 
@@ -109,7 +111,7 @@ namespace FileLogger.Logging
         void BeginFile()
         {
             Directory.CreateDirectory(Settings.Folder);
-            FilePath = Path.Combine(Settings.Folder, LogEntry.StaticHostName + "-" + DateTime.Now.ToString("yyyyMMdd-HHmm") + ".log");
+            PathFileName = Path.Combine(Settings.Folder, LogEntry.StaticHostName + "-" + DateTime.Now.ToString("yyyyMMdd-HHmm") + ".log");
 
             // Log Titles
             StringBuilder sb = new StringBuilder();
@@ -119,10 +121,10 @@ namespace FileLogger.Logging
             sb.Append(Pad("Level", Lengths["Level"]));
             sb.Append(Pad("EventId", Lengths["EventId"]));
             sb.Append(Pad("Category", Lengths["Category"]));
-            sb.Append(Pad("Scope", Lengths["Scope"]));
-            sb.AppendLine("Text");
+            sb.Append(Pad("Text", Lengths["Text"]));
+            sb.AppendLine(Pad("Scope", Lengths["Scope"]));
 
-            File.WriteAllText(FilePath, sb.ToString());
+            File.WriteAllText(PathFileName, sb.ToString());
 
             ApplyRetainPolicy();
         }
@@ -134,7 +136,6 @@ namespace FileLogger.Logging
             LogEntry Info = null;
             if (InfoQueue.TryDequeue(out Info))
             {
-                string S;
                 StringBuilder sb = new StringBuilder();
                 sb.Append(Pad(Info.TimeStampUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss.ff"), Lengths["Time"]));
                 sb.Append(Pad(Info.HostName, Lengths["Host"]));
@@ -142,34 +143,32 @@ namespace FileLogger.Logging
                 sb.Append(Pad(Info.Level.ToString(), Lengths["Level"]));
                 sb.Append(Pad(Info.EventId != null ? Info.EventId.ToString() : "", Lengths["EventId"]));
                 sb.Append(Pad(Info.Category, Lengths["Category"]));
+                sb.Append(Info.Text.Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " "));
 
-                S = "";
                 if (Info.Scopes != null && Info.Scopes.Count > 0)
                 {
-                    LogScopeInfo logSInfo = Info.Scopes.Last();
-                    if (!string.IsNullOrWhiteSpace(logSInfo.Text))
+                    string S = "";
+
+                    LogScopeInfo infoScope = Info.Scopes.Last();
+                    if (!string.IsNullOrWhiteSpace(infoScope.Text))
                     {
-                        S = logSInfo.Text;
+                        S = infoScope.Text;
                     }
                     else
                     {
                     }
+
+                    sb.Append(Pad(S, Lengths["Scope"]));
                 }
-                sb.Append(Pad(S, Lengths["Scope"]));
 
-                string Text = Info.Text;
 
-                /* writing properties is too much for a text file logger
+                /* Writing properties is too much for a text file logger
+                 * while StateProperties is equivalent to Text
                 if (Info.StateProperties != null && Info.StateProperties.Count > 0)
                 {
                     Text = Text + " Properties = " + Newtonsoft.Json.JsonConvert.SerializeObject(Info.StateProperties);
                 }                 
                  */
-
-                if (!string.IsNullOrWhiteSpace(Text))
-                {
-                    sb.Append(Text.Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " "));
-                }
 
                 sb.AppendLine();
                 WriteLine(sb.ToString());

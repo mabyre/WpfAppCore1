@@ -89,7 +89,7 @@ namespace WpfAppCore1
 
         private void ButtonDisplay_Click(object sender, RoutedEventArgs e)
         {
-            string fileName = FileLogger.Logging.FileLoggerProvider.FilePath;
+            string fileName = FileLogger.Logging.FileLoggerProvider.PathFileName;
             textBoxLog.Text = File.ReadAllText(fileName);
         }
     }
