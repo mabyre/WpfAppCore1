@@ -11,8 +11,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Display Log" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Click="ButtonDisplay_Click"/>
-        <Button Content="Trace Log" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Center" Click="ButtonTrace_Click"/>
+        <Button Content="Display Log" HorizontalAlignment="Left" Margin="40,0,0,0" Width="100" VerticalAlignment="Center" Click="ButtonDisplay_Click"/>
+        <Button Content="Trace Log" HorizontalAlignment="Left" Margin="155,0,0,0" VerticalAlignment="Center" Width="100" Click="ButtonTrace_Click"/>
         <TextBox Grid.Row="1" x:Name="textBoxLog" Text="Log are going to be display here" Margin="40,20,40,40"/>
     </Grid>
 </UserControl>
