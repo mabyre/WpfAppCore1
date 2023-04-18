@@ -25,10 +25,6 @@
   </ItemGroup>	
 
   <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>	
-
-  <ItemGroup>
     <ProjectReference Include="..\FileLogger.Logging\FileLogger.Logging.csproj" />
   </ItemGroup>
 
