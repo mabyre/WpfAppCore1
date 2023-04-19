@@ -11,6 +11,7 @@ Like this:
 - [Add an appsettings.json file](#add-an-appsettingsjson-file)
 - [File Logger Provider](#file-logger-provider)
 - [Create Style for toolbar](#create-style-for-toolbar)
+- [Using Git Submodule](#using-git-submodule)
 
 ## UserControl1
 - Use Logger Tool
@@ -148,7 +149,24 @@ It's needed to add a Style for ToolBar Text
 
 <img style="margin: 10px" src="Images/2023-04-14_12h00_38.png" alt="WPF .NET Core Toolkit Styled" />
 
-[:arrow_up_small: Top of page](#wpf-net-core-toolkit)
+## Using Git Submodule
+It can be usefull to use a module while ***FileLogger.Logging*** could be used by several projects.
+
+It's not possible to create a submodule by the UI of Visual Studio, you should use the command line.
+
+I create the Repository: [mabyre/FileLogger.Logging](https://github.com/mabyre/FileLogger.Logging)
+
+I deleted the project inside ***WpfAppCore1*** and use the command:
+
+> $git submodule add https://github.com/mabyre/FileLogger.Logging.git
+
+<img style="margin: 10px" src="Images/2023-04-19_15h25_03.png" alt="git submodule add"/>
+
+Then I have to add the project by hand, using right button on the solution then add existing project.
+
+Then add a project reference from FileLogger.Logging to WpfAppCore1.
+
+While the project is already in github everyhting is fine.
 
 ## Other Reference Pages 
 
@@ -156,4 +174,4 @@ It's needed to add a Style for ToolBar Text
 
 [How to Write a Custom Logging Provider in ASP.NET Core](https://www.codeproject.com/Articles/1556475/How-to-Write-a-Custom-Logging-Provider-in-ASP-NET)
 
-
+[:arrow_up_small: Top of page](#wpf-net-core-toolkit)
