@@ -1,0 +1,3 @@
+[submodule "FileLogger.Logging"]
+	path = FileLogger.Logging
+	url = https://github.com/mabyre/FileLogger.Logging.git
