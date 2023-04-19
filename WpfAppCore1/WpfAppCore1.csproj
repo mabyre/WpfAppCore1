@@ -22,10 +22,6 @@
     <ApplicationDefinition Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-  </ItemGroup>	
-
-  <ItemGroup>
-    <ProjectReference Include="..\FileLogger.Logging\FileLogger.Logging.csproj" />
   </ItemGroup>
 
 </Project>
