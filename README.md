@@ -168,10 +168,11 @@ Then add a project reference from FileLogger.Logging to WpfAppCore1.
 
 While the project is already in github everyhting is fine.
 
+### Reference
+- [Git Tools - Submodules](https://git-scm.com/book/en/v2/Utilitaires-Git-Sous-modules)
+
 ## Other Reference Pages 
-
-[HTTP Login in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-logging/)
-
-[How to Write a Custom Logging Provider in ASP.NET Core](https://www.codeproject.com/Articles/1556475/How-to-Write-a-Custom-Logging-Provider-in-ASP-NET)
+- [HTTP Login in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-logging/)
+- [How to Write a Custom Logging Provider in ASP.NET Core](https://www.codeproject.com/Articles/1556475/How-to-Write-a-Custom-Logging-Provider-in-ASP-NET)
 
 [:arrow_up_small: Top of page](#wpf-net-core-toolkit)
