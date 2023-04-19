@@ -83,7 +83,7 @@ This is the aim of UserControlLog plus some little things like add ***Program.cs
 ```
 
 ## Add an appsettings.json file
-I'm very surprise that default template WPF application are NOT with an an appsettings.json file ?!
+I'm surprise that default template WPF application are NOT with an an appsettings.json file ?!
 While WPF application create by TemplateSutio had one.
 
 So add by hand an appsettings.json
@@ -96,7 +96,7 @@ The aim of adding an ***appsettings.json*** is to configure Log level.
 
 Once the appsettings.jso file is here the following config will make logs at Trace level :
 
-```xaml
+```json
     "Debug": {
         "LogLevel": {
         "Default": "Trace",
@@ -106,9 +106,19 @@ Once the appsettings.jso file is here the following config will make logs at Tra
     }
 ```
 
-> :warning: The appsettings.json file to change is the one in directory:
+> :warning: If you change setting in appsettings.json, to be apply choose "Generate solution" for the appsettnigs.json file to be copied in directory:
 >
 > ***WpfAppCore1\bin\Debug\net6.0-windows***
+
+While you're in Debug mode. Don't forget to have, in your .csproj :
+
+```xaml
+    <ItemGroup>
+        <None Update="appsettings.json">
+	        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+```
 
 ## File Logger Provider
 All this is to use or create a FileLoggerProvider through the ILogginBuilder to write logs in a file without using third party provider wich are to complex to configure.
